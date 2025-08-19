@@ -9,7 +9,7 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #0d0d0d, #4b0082);
       color: white;
-      height: 100vh;
+      min-height: 100vh;
     }
 
     /* Navigation Bar */
@@ -38,7 +38,7 @@
     /* Page content */
     .content {
       text-align: center;
-      padding: 80px 20px;
+      padding: 60px 20px;
     }
 
     .content h1 {
@@ -48,6 +48,53 @@
 
     .content p {
       font-size: 1.2em;
+    }
+
+    /* Downloads section */
+    .downloads {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.9em;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #6a0dad;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ba55ff;
     }
   </style>
 </head>
@@ -62,6 +109,29 @@
   <div class="content">
     <h1>Welcome to Resky</h1>
     <p>This is your new GitHub Pages site with a sleek gradient theme 🚀</p>
+  </div>
+
+  <div class="downloads">
+    <div class="card">
+      <h2>Download 1</h2>
+      <p>Placeholder description for download item 1.</p>
+      <a href="#" class="btn">Download</a>
+    </div>
+    <div class="card">
+      <h2>Download 2</h2>
+      <p>Placeholder description for download item 2.</p>
+      <a href="#" class="btn">Download</a>
+    </div>
+    <div class="card">
+      <h2>Download 3</h2>
+      <p>Placeholder description for download item 3.</p>
+      <a href="#" class="btn">Download</a>
+    </div>
+    <div class="card">
+      <h2>Download 4</h2>
+      <p>Placeholder description for download item 4.</p>
+      <a href="#" class="btn">Download</a>
+    </div>
   </div>
 </body>
 </html>
