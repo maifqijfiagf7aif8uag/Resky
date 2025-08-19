@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My GitHub Website</title>
+  <meta charset="UTF-8">
+  <title>Resky</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #4b0082);
+      color: white;
+      height: 100vh;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: flex-start;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      position: sticky;
+      top: 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #ba55ff;
+    }
+
+    /* Page content */
+    .content {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .content h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <p>This is my first GitHub Pages site 🚀</p>
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div class="content">
+    <h1>Welcome to Resky</h1>
+    <p>This is your new GitHub Pages site with a sleek gradient theme 🚀</p>
+  </div>
 </body>
 </html>
