@@ -10,6 +10,7 @@
       background: linear-gradient(135deg, #0d0d0d, #4b0082);
       color: white;
       min-height: 100vh;
+      scroll-behavior: smooth;
     }
 
     /* Navigation Bar */
@@ -21,6 +22,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.5);
       position: sticky;
       top: 0;
+      z-index: 100;
     }
 
     .navbar a {
@@ -35,19 +37,39 @@
       color: #ba55ff;
     }
 
-    /* Page content */
-    .content {
+    /* Hero Section */
+    .hero {
       text-align: center;
-      padding: 60px 20px;
+      padding: 100px 20px;
+      background: rgba(0,0,0,0.5);
     }
 
-    .content h1 {
+    .hero h1 {
       font-size: 3em;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    .content p {
-      font-size: 1.2em;
+    .hero p {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .hero .btn {
+      display: inline-block;
+      background: #6a0dad;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    .hero .btn:hover {
+      background: #ba55ff;
     }
 
     /* Downloads section */
@@ -55,8 +77,8 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
-      margin: 40px auto;
-      max-width: 900px;
+      margin: 60px auto;
+      max-width: 1000px;
       padding: 0 20px;
     }
 
@@ -66,11 +88,14 @@
       padding: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.6);
       text-align: center;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, background 0.3s ease;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
     }
 
     .card:hover {
       transform: translateY(-5px);
+      background: rgba(0,0,0,0.8);
     }
 
     .card h2 {
@@ -96,22 +121,62 @@
     .btn:hover {
       background: #ba55ff;
     }
+
+    /* About section */
+    .about {
+      text-align: center;
+      padding: 80px 20px;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .about h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.8);
+      margin-top: 50px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
   </style>
 </head>
 <body>
   <div class="navbar">
     <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Projects</a>
-    <a href="#">Contact</a>
+    <a href="#downloads">Downloads</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </div>
 
-  <div class="content">
+  <div class="hero">
     <h1>Welcome to Resky</h1>
-    <p>This is your new GitHub Pages site with a sleek gradient theme 🚀</p>
+    <p>A sleek GitHub Pages site with gradient themes 🚀</p>
+    <a href="#downloads" class="btn">Explore Downloads</a>
   </div>
 
-  <div class="downloads">
+  <div class="downloads" id="downloads">
     <div class="card">
       <h2>Download 1</h2>
       <p>Placeholder description for download item 1.</p>
@@ -133,5 +198,29 @@
       <a href="#" class="btn">Download</a>
     </div>
   </div>
+
+  <div class="about" id="about">
+    <h2>About Resky</h2>
+    <p>This is a modern GitHub Pages project designed to showcase clean UI, smooth animations, and integration with external services like Discord webhooks. You can expand this template with more sections, downloads, or even link it to custom domains.</p>
+  </div>
+
+  <footer>
+    <p>© 2025 Resky. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // 🚨 Replace this with your real webhook
+    const webhookURL = "https://discord.com/api/webhooks/1407831825384214639/iAWSIgNgFN4b-03X7qwolHeYmE_AByHnZ14IBuwanQisV4rgmDHmedk_cvy56pd1MsqL";
+
+    // Send visitor ping
+    fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: "Website Logger",
+        content: "sum little bitch just went on ur website"
+      })
+    });
+  </script>
 </body>
 </html>
